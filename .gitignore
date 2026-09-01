@@ -1,0 +1,61 @@
+# ───────────────────────────────────────────────────────────────────────────
+#  buyback-dashboard / .gitignore
+#
+#  판단 기준은 하나다: **잃어버리면 되돌릴 수 없는 것은 커밋한다.**
+#  재생성 가능한 산출물과 시크릿만 뺀다.
+#
+#  ★ 커밋해야 하는 것 (여기에 절대 넣지 말 것)
+#    data/kind_decl_snapshots.json  ← 매 영업일 누적되는 실측 원장. 소급 복구 불가.
+#                                     머신을 바꿔도 이게 따라가야 정확도가 유지된다.
+#    data/kind_decl_backfill.json   ← 가동 이전 구간(2026-08-20~08-28) 백필. 정적.
+#    data/holidays_kr.json          ← KRX 휴장일 캘린더(+수동 관리하는 short_sessions).
+#    data/buyback.json              ← 렌더 입력. 네트워크 없이 재렌더/디버그하려면 필요.
+#    data/dart_snapshot.json        ← DART 취득결정 원문 요약. 숫자 교차검증의 근거.
+#    docs/index.html                ← GitHub Pages 가 서빙하는 실제 페이지.
+#    vendor/chart.umd.min.js        ← Chart.js v4.4.0 (MIT). 오프라인 자기완결의 전제.
+# ───────────────────────────────────────────────────────────────────────────
+
+# 시크릿 — 절대 커밋 금지
+#  .env 한 줄만 두면 .env.local / .env.production 같은 변형이 그대로 커밋 대상이 된다.
+#  .env.* 로 전부 막고, 키가 들어 있지 않은 템플릿 .env.example 만 되살린다.
+.env
+.env.*
+!.env.example
+
+# 파이썬
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS 부스러기 (맥미니로 옮기므로 .DS_Store 필수)
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# 실행 로그
+logs/
+
+# run_daily.sh 의 중복 실행 방지 락 (mkdir 원자성을 쓴다. flock 없는 macOS 대응)
+.run_daily.lock/
+
+# 재생성되는 산출물
+#  dashboard.html 은 docs/index.html 과 내용이 같다(안내 문구 한 줄만 다름).
+#  둘 다 커밋하면 매일 286KB×2 가 쌓이므로 로컬 사본은 커밋하지 않는다.
+#  바탕화면 바로가기가 이 파일을 가리키므로 파일 자체는 로컬에 계속 존재한다
+#  (clone 직후에는 없다 → run_daily 를 한 번 돌리면 생긴다).
+dashboard.html
+
+# DART 원문 문서 캐시 (공시 원문. 용량만 크고 키만 있으면 재수집된다)
+data/_dart_cache/
+
+# 정찰용으로 남의 사이트를 통째로 받아둔 사본 — 공개 리포에 재배포하지 않는다.
+_ref/*.html
+_ref/raoni_api_*.json
+
+#  ★ DESIGN_SPEC.md 도 같은 이유로 뺀다. 형식은 우리가 쓴 '스펙 문서'지만
+#     내용은 레퍼런스 사이트 스타일시트의 97%(111줄 중 108줄)를 그대로 옮긴 것이라
+#     사실상 남의 CSS 재배포다. 로컬에는 남겨두고 공개 리포에만 올리지 않는다.
+#     (우리가 직접 쓴 _ref/FINDINGS.md · _ref/DART_SPEC.md 는 커밋한다)
+_ref/DESIGN_SPEC.md

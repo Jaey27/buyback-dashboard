@@ -1,0 +1,92 @@
+{
+ "note": "KIND decl '체결금액누계' 의 과거 일자별 스냅샷 백필. 우리 파이프라인이 아직 돌지 않던 구간(프로그램 시작 ~ 첫 자동실행 전날)을 메운다. 값은 공개 레퍼런스 API가 매 영업일 캡처해 둔 KIND 누계의 일별 차분이며, 프로그램 누계는 우리가 직접 조회한 KIND decl 체결금액누계와 원 단위(005930) / 3,000원 이내(000660, 천원 반올림) 로 대조 완료했다. 마지막 일자는 실측 스냅샷이 덮어쓰므로 반올림 잔차가 흡수된다.",
+ "series": {
+  "000660|2026-08-20": {
+   "2026-08-19": {
+    "backfilled": true,
+    "cum_amount_krw": 0,
+    "cum_qty": 0
+   },
+   "2026-08-20": {
+    "backfilled": true,
+    "cum_amount_krw": 1090818241000,
+    "cum_qty": 650000
+   },
+   "2026-08-21": {
+    "backfilled": true,
+    "cum_amount_krw": 2224318907000,
+    "cum_qty": 1300000
+   },
+   "2026-08-24": {
+    "backfilled": true,
+    "cum_amount_krw": 3338170008000,
+    "cum_qty": 1950000
+   },
+   "2026-08-25": {
+    "backfilled": true,
+    "cum_amount_krw": 4386140088000,
+    "cum_qty": 2600000
+   },
+   "2026-08-26": {
+    "backfilled": true,
+    "cum_amount_krw": 5495207483000,
+    "cum_qty": 3250000
+   },
+   "2026-08-27": {
+    "backfilled": true,
+    "cum_amount_krw": 6626384933000,
+    "cum_qty": 3900000
+   },
+   "2026-08-28": {
+    "backfilled": true,
+    "cum_amount_krw": 7728270012000,
+    "cum_qty": 4550000
+   },
+   "2026-08-31": {
+    "backfilled": true,
+    "cum_amount_krw": 8782033317000,
+    "cum_qty": 5200000
+   }
+  },
+  "005930|2026-08-24": {
+   "2026-08-21": {
+    "backfilled": true,
+    "cum_amount_krw": 0,
+    "cum_qty": 0
+   },
+   "2026-08-24": {
+    "backfilled": true,
+    "cum_amount_krw": 468249487000,
+    "cum_qty": 1800000
+   },
+   "2026-08-25": {
+    "backfilled": true,
+    "cum_amount_krw": 972101413000,
+    "cum_qty": 3800000
+   },
+   "2026-08-26": {
+    "backfilled": true,
+    "cum_amount_krw": 1495544372000,
+    "cum_qty": 5800000
+   },
+   "2026-08-27": {
+    "backfilled": true,
+    "cum_amount_krw": 2029126735000,
+    "cum_qty": 7800000
+   },
+   "2026-08-28": {
+    "backfilled": true,
+    "cum_amount_krw": 2549419907000,
+    "cum_qty": 9800000
+   },
+   "2026-08-31": {
+    "backfilled": true,
+    "cum_amount_krw": 3054461236000,
+    "cum_qty": 11800000
+   }
+  }
+ },
+ "source": "raoni.xyz/buyback 공개 API (_ref/raoni_api_*.json) 의 kind.history[].filled.amountThousandKrw × 1000",
+ "unit": "KRW (원)",
+ "verified_against": "KIND downloadDecl '체결금액누계' (005930 3,054,461,236,000원 / 000660 8,782,033,314,000원)"
+}

@@ -1,0 +1,17 @@
+# Windows(개발) → macOS(운영) 로 옮기는 리포다. 줄바꿈을 강제하지 않으면
+# 윈도우의 core.autocrlf=true 때문에 셸 스크립트가 CRLF 로 체크아웃되고,
+# 맥에서 "bad interpreter: /bin/bash^M" 로 죽는다.
+* text=auto eol=lf
+
+*.sh    text eol=lf
+*.py    text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.yml   text eol=lf
+*.html  text eol=lf
+
+# 배치 파일만은 CRLF 여야 한다(cmd.exe 가 배치 파일을 바이트 오프셋으로 다시 읽는다).
+*.bat   text eol=crlf
+
+# 벤더 번들은 건드리지 않는다.
+vendor/*.js -text
