@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-01T19:30:37+09:00",
- "as_of": "2026-09-01",
+ "generated_at": "2026-09-02T08:40:36+09:00",
+ "as_of": "2026-09-02",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
   "dart": "DART OpenAPI tsstkAqDecsn · stockTotqySttus · piicDecsn · list",
@@ -85,7 +85,11 @@
  ],
  "warnings": [
   "[005930] 공시 취득기간 종료일 2026-11-21 는 휴장일(주말/공휴일)이다 → 실질 마지막 매매일 2026-11-20.",
+  "[005930] 2026-09-02: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 2,000,000주 는 이미 공시됨).",
+  "[005930] 2026-09-02: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
   "[005930] 일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
+  "[000660] 2026-09-02: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 650,000주 는 이미 공시됨).",
+  "[000660] 2026-09-02: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
   "[000660] 일별 체결금액 7일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
   "[000660] 금액 한도 초과 우려: 현 평단(1,688,934원)으로 잔여 18,220,000주를 다 매입하면 40,652,650,454,596원 → 공시 취득예정금액 40,004,340,000,000원 대비 648,310,454,596원(1.62%) 초과. 초과 매입에는 정정공시가 필요하다."
  ],
@@ -96,8 +100,8 @@
     "name": "삼성전자",
     "isur_cd": "00593",
     "corp_code": "00126380",
-    "generated_at": "2026-09-01T19:30:34+09:00",
-    "as_of": "2026-09-01",
+    "generated_at": "2026-09-02T08:40:34+09:00",
+    "as_of": "2026-09-02",
     "status": "active"
    },
    "program": {
@@ -242,10 +246,28 @@
      "amount_source": "kind_decl_snapshot",
      "cumulative": 13800000,
      "close": 261000,
-     "volume": 12765827,
-     "share_of_volume": 0.1566682675552473,
+     "volume": 15319615,
+     "share_of_volume": 0.13055158370494296,
      "avg_vs_close": -0.006145130747126415,
      "provisional": false
+    },
+    {
+     "date": "2026-09-02",
+     "applied": 2000000,
+     "applied_date": "2026-09-01",
+     "appliable_before": 39485968,
+     "filled": null,
+     "fill_rate": null,
+     "amount_krw": null,
+     "avg_price": null,
+     "amount_exact": null,
+     "amount_source": null,
+     "cumulative": 13800000,
+     "close": null,
+     "volume": null,
+     "share_of_volume": null,
+     "avg_vs_close": null,
+     "provisional": true
     }
    ],
    "derived": {
@@ -276,9 +298,9 @@
      "label": "기한 내 완료 가능",
      "reason": "여유 34거래일 (>= 임계 5거래일)"
     },
-    "provisional_applied": null,
-    "provisional_cumulative": null,
-    "provisional_ratio": null,
+    "provisional_applied": 2000000,
+    "provisional_cumulative": 15800000,
+    "provisional_ratio": 0.2965133334914738,
     "fill_rate_avg": 1.0,
     "amount_headroom_krw": 1202589088284,
     "amount_headroom_pct": 8.0173,
@@ -286,7 +308,7 @@
     "pace_eta_short_session": null,
     "on_schedule_gap_pp": 14.4226,
     "elapsed_ratio": 0.11475409836065574,
-    "elapsed_ratio_calendar_asof_today": 0.0898876404494382,
+    "elapsed_ratio_calendar_asof_today": 0.10112359550561797,
     "exec_days": 7,
     "settled_days": 7,
     "last_settled_date": "2026-09-01",
@@ -296,6 +318,8 @@
    },
    "warnings": [
     "공시 취득기간 종료일 2026-11-21 는 휴장일(주말/공휴일)이다 → 실질 마지막 매매일 2026-11-20.",
+    "2026-09-02: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 2,000,000주 는 이미 공시됨).",
+    "2026-09-02: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
     "일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료)."
    ]
   },
@@ -305,8 +329,8 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-09-01T19:30:34+09:00",
-    "as_of": "2026-09-01",
+    "generated_at": "2026-09-02T08:40:34+09:00",
+    "as_of": "2026-09-02",
     "status": "active"
    },
    "program": {
@@ -487,10 +511,28 @@
      "amount_source": "kind_decl_snapshot",
      "cumulative": 5850000,
      "close": 1693000,
-     "volume": 2481959,
-     "share_of_volume": 0.261889902290892,
+     "volume": 2727724,
+     "share_of_volume": 0.23829390363541178,
      "avg_vs_close": -0.0020148198464264855,
      "provisional": false
+    },
+    {
+     "date": "2026-09-02",
+     "applied": 650000,
+     "applied_date": "2026-09-01",
+     "appliable_before": 18220000,
+     "filled": null,
+     "fill_rate": null,
+     "amount_krw": null,
+     "avg_price": null,
+     "amount_exact": null,
+     "amount_source": null,
+     "cumulative": 5850000,
+     "close": null,
+     "volume": null,
+     "share_of_volume": null,
+     "avg_vs_close": null,
+     "provisional": true
     }
    ],
    "derived": {
@@ -521,9 +563,9 @@
      "label": "기한 내 완료 가능",
      "reason": "여유 24거래일 (>= 임계 5거래일)"
     },
-    "provisional_applied": null,
-    "provisional_cumulative": null,
-    "provisional_ratio": null,
+    "provisional_applied": 650000,
+    "provisional_cumulative": 6500000,
+    "provisional_ratio": 0.2700457000415455,
     "fill_rate_avg": 1.0,
     "amount_headroom_krw": -648310454596,
     "amount_headroom_pct": -1.6206,
@@ -539,7 +581,7 @@
     "pace_eta_short_session": null,
     "on_schedule_gap_pp": 9.788,
     "elapsed_ratio": 0.14516129032258066,
-    "elapsed_ratio_calendar_asof_today": 0.13186813186813187,
+    "elapsed_ratio_calendar_asof_today": 0.14285714285714285,
     "exec_days": 9,
     "settled_days": 9,
     "last_settled_date": "2026-09-01",
@@ -548,6 +590,8 @@
     "kind_cum_ratio_pct": 24.3
    },
    "warnings": [
+    "2026-09-02: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 650,000주 는 이미 공시됨).",
+    "2026-09-02: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
     "일별 체결금액 7일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
     "금액 한도 초과 우려: 현 평단(1,688,934원)으로 잔여 18,220,000주를 다 매입하면 40,652,650,454,596원 → 공시 취득예정금액 40,004,340,000,000원 대비 648,310,454,596원(1.62%) 초과. 초과 매입에는 정정공시가 필요하다."
    ]
