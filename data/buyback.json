@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-04T18:30:34+09:00",
+ "generated_at": "2026-09-04T19:30:35+09:00",
  "as_of": "2026-09-04",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
@@ -85,9 +85,7 @@
  ],
  "warnings": [
   "[005930] 공시 취득기간 종료일 2026-11-21 는 휴장일(주말/공휴일)이다 → 실질 마지막 매매일 2026-11-20.",
-  "[005930] 일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
   "[005930] 일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
-  "[000660] 일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
   "[000660] 일별 체결금액 7일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
   "[000660] 금액 한도 초과 우려: 현 평단(1,675,420원)으로 잔여 16,270,000주를 다 매입하면 40,327,355,485,539원 → 공시 취득예정금액 40,004,340,000,000원 대비 323,015,485,539원(0.81%) 초과. 초과 매입에는 정정공시가 필요하다."
  ],
@@ -98,7 +96,7 @@
     "name": "삼성전자",
     "isur_cd": "00593",
     "corp_code": "00126380",
-    "generated_at": "2026-09-04T18:30:31+09:00",
+    "generated_at": "2026-09-04T19:30:33+09:00",
     "as_of": "2026-09-04",
     "status": "active"
    },
@@ -294,8 +292,8 @@
      "fill_rate": 1.0,
      "amount_krw": 511182420750,
      "avg_price": 255591,
-     "amount_exact": false,
-     "amount_source": "estimated_hl2",
+     "amount_exact": true,
+     "amount_source": "kind_decl_snapshot",
      "cumulative": 19800000,
      "close": 255500,
      "volume": 14031862,
@@ -352,7 +350,6 @@
    },
    "warnings": [
     "공시 취득기간 종료일 2026-11-21 는 휴장일(주말/공휴일)이다 → 실질 마지막 매매일 2026-11-20.",
-    "일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
     "일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료)."
    ]
   },
@@ -362,7 +359,7 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-09-04T18:30:31+09:00",
+    "generated_at": "2026-09-04T19:30:33+09:00",
     "as_of": "2026-09-04",
     "status": "active"
    },
@@ -594,8 +591,8 @@
      "fill_rate": 1.0,
      "amount_krw": 1070904063500,
      "avg_price": 1647545,
-     "amount_exact": false,
-     "amount_source": "estimated_hl2",
+     "amount_exact": true,
+     "amount_source": "kind_decl_snapshot",
      "cumulative": 7800000,
      "close": 1647000,
      "volume": 2827725,
@@ -659,7 +656,6 @@
     "kind_cum_ratio_pct": 32.41
    },
    "warnings": [
-    "일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
     "일별 체결금액 7일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
     "금액 한도 초과 우려: 현 평단(1,675,420원)으로 잔여 16,270,000주를 다 매입하면 40,327,355,485,539원 → 공시 취득예정금액 40,004,340,000,000원 대비 323,015,485,539원(0.81%) 초과. 초과 매입에는 정정공시가 필요하다."
    ]
