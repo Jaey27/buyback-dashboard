@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30T18:30:52+09:00",
+ "generated_at": "2026-09-30T19:31:19+09:00",
  "as_of": "2026-09-30",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
@@ -98,7 +98,7 @@
     "name": "삼성전자",
     "isur_cd": "00593",
     "corp_code": "00126380",
-    "generated_at": "2026-09-30T18:30:50+09:00",
+    "generated_at": "2026-09-30T19:31:11+09:00",
     "as_of": "2026-09-30",
     "status": "active"
    },
@@ -585,8 +585,8 @@
      "amount_exact": null,
      "amount_source": null,
      "cumulative": 49800000,
-     "close": 269000,
-     "volume": 15456636,
+     "close": 268500,
+     "volume": 15565108,
      "share_of_volume": null,
      "avg_vs_close": null,
      "provisional": true
@@ -650,7 +650,7 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-09-30T18:30:50+09:00",
+    "generated_at": "2026-09-30T19:31:11+09:00",
     "as_of": "2026-09-30",
     "status": "active"
    },
@@ -1173,8 +1173,8 @@
      "amount_exact": null,
      "amount_source": null,
      "cumulative": 17150000,
-     "close": 1784000,
-     "volume": 2945109,
+     "close": 1780000,
+     "volume": 2956744,
      "share_of_volume": null,
      "avg_vs_close": null,
      "provisional": true
