@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T18:30:36+09:00",
+ "generated_at": "2026-10-12T19:30:36+09:00",
  "as_of": "2026-10-12",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
@@ -98,7 +98,7 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-10-12T18:30:34+09:00",
+    "generated_at": "2026-10-12T19:30:34+09:00",
     "as_of": "2026-10-12",
     "status": "active"
    },
@@ -729,8 +729,8 @@
      "amount_exact": null,
      "amount_source": null,
      "cumulative": 20050000,
-     "close": 1603000,
-     "volume": 3005183,
+     "close": 1599000,
+     "volume": 3035083,
      "share_of_volume": null,
      "avg_vs_close": null,
      "provisional": true
