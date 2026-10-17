@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-17T08:40:37+09:00",
- "as_of": "2026-10-17",
+ "generated_at": "2026-10-18T08:40:36+09:00",
+ "as_of": "2026-10-18",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
   "dart": "DART OpenAPI tsstkAqDecsn · stockTotqySttus · piicDecsn · list",
@@ -97,8 +97,8 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-10-17T08:40:34+09:00",
-    "as_of": "2026-10-17",
+    "generated_at": "2026-10-18T08:40:34+09:00",
+    "as_of": "2026-10-18",
     "status": "active"
    },
    "program": {
@@ -853,7 +853,7 @@
     "pace_eta_short_session": null,
     "on_schedule_gap_pp": 31.1484,
     "elapsed_ratio": 0.6129032258064516,
-    "elapsed_ratio_calendar_asof_today": 0.6373626373626373,
+    "elapsed_ratio_calendar_asof_today": 0.6483516483516484,
     "exec_days": 38,
     "settled_days": 38,
     "last_settled_date": "2026-10-16",
