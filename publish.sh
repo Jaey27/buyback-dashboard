@@ -83,7 +83,7 @@ fi
 # --- 4. 변경분만 스테이징 ---------------------------------------------------
 STAGED=0
 for f in "${PATHS[@]}"; do
-  [ -f "$f" ] || continue
+  [ -e "$f" ] || continue      # -e: data/programs 같은 폴더도 통과(-f 는 파일만이라 시즌 보관본이 빠졌음)
   git add -- "$f"
 done
 
