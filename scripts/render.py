@@ -307,6 +307,16 @@ JS = r"""
 var D = window.__BUYBACK__;
 /* ★ 종목 목록은 데이터에서 유도한다(하드코딩하면 종목 교체 시 화면이 통째로 빈다). */
 var ORDER = Object.keys(D.companies || {});
+/* ★ 시즌: 지난 프로그램(D.archive)은 '<종목>_s<번호>' 키로 같은 화면 함수를 쓰게 끼워 넣는다. ORDER(비교 탭)는 현재 시즌만. */
+var ARCH_IDS = [];
+Object.keys(D.archive || {}).forEach(function(code){
+  (D.archive[code] || []).forEach(function(co){ var k = code + '_s' + co.meta.season; D.companies[k] = co; ARCH_IDS.push(k); });
+});
+function seasonLabel(co, past){
+  var s = co.meta.season ? ' 시즌' + co.meta.season : '';
+  var done = past || co.meta.status === 'ended' || (co.derived && co.derived.completion_verdict && co.derived.completion_verdict.code === 'ended');
+  return co.meta.name + s + (done ? ' (종료)' : '');
+}
 var DASH = '—';
 var DART_DOC = 'https://dart.fss.or.kr/dsaf001/main.do?rcpNo=';
 var KIND_URL = 'https://kind.krx.co.kr/corpgeneral/treasurystk.do?method=loadInitPage';
@@ -971,7 +981,10 @@ function footerHtml(){
 
 /* ── 라우팅 ───────────────────────────────────── */
 /* 비교 탭은 회사가 2곳 이상일 때만. 1곳이면 탭 자체를 숨긴다. */
-var TABS = ORDER.map(function(c){ return {id:c, label:D.companies[c].meta.name}; })
+var TABS = [].concat.apply([], ORDER.map(function(c){
+    var past = ARCH_IDS.filter(function(k){ return k.indexOf(c + '_s') === 0; }).reverse();   /* 최신 시즌 → 지난 시즌 */
+    return [{id:c, label:seasonLabel(D.companies[c], false)}].concat(past.map(function(k){ return {id:k, label:seasonLabel(D.companies[k], true)}; }));
+  }))
   .concat(ORDER.length>=2 ? [{id:'cmp', label:'비교'}] : []);
 
 /* 실제로 넘칠 때만 페이드/힌트를 보인다(안 넘치면 오히려 방해가 된다). */

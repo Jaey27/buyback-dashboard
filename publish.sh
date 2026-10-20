@@ -60,6 +60,7 @@ PATHS=(
   data/kind_decl_backfill.json
   data/holidays_kr.json
   data/dart_snapshot.json
+  data/programs                    # ★ 시즌별 보관(지난 시즌 탭) — 소급 복구 불가
 )
 
 # 빌드 산출물이 있는지 확인 (run_daily 를 안 돌리고 부른 경우 잡는다)

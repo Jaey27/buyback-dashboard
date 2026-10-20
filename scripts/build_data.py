@@ -55,6 +55,9 @@ import price_source as ps         # noqa: E402  KIND 신고/신청/체결 + 일�
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 OUT_PATH = DATA_DIR / "buyback.json"
+# ★ 시즌 보관: 프로그램(취득결정 공시)마다 마지막 상태를 한 파일로 남긴다 → 새 취득결정이 DART에서 잡히면
+#   collect_company 가 새 프로그램을 고르고 새 파일이 생겨 '시즌 N+1'이 된다. 이전 파일은 그대로 남아 과거 시즌 탭이 된다.
+PROGRAMS_DIR = DATA_DIR / "programs"
 
 KST = _dt.timezone(_dt.timedelta(hours=9))
 
@@ -436,6 +439,15 @@ def assemble(raw: dict[str, Any], today: _dt.date) -> dict[str, Any]:
     avg_cost = _ratio(spent_krw, cum_filled)
     remaining_shares = (plan_shares - cum_filled) if plan_shares is not None else None
     progress_ratio = _ratio(cum_filled, plan_shares)
+    # ★ 금액 기준 공시(삼성 2026-08-24~, 15조 원): 주가가 내려가면 취득예정 '수량'보다 더 많이 사도
+    #   취득예정 '금액' 안이면 정상이다(결과보고서 20261012000421: 14,999,999,899,750원 / 예정 14,999,999,992,000원).
+    #   이 경우 진행률·남은 수량은 금액 기준으로 본다.
+    progress_basis = "shares"
+    if (plan_shares and plan_amount_krw and cum_filled > plan_shares
+            and spent_krw is not None and spent_krw <= plan_amount_krw):
+        progress_basis = "amount"
+        progress_ratio = _ratio(spent_krw, plan_amount_krw)
+        remaining_shares = 0
     remaining_est_krw = (round(remaining_shares * avg_cost)
                          if (remaining_shares is not None and avg_cost) else None)
 
@@ -539,7 +551,14 @@ def assemble(raw: dict[str, Any], today: _dt.date) -> dict[str, Any]:
                 f"초과 매입에는 정정공시가 필요하다.")
 
     # ---- 기한 내 완료 판정 (임계값은 파일 상단 상수) --------------------------
-    if status == "ended":
+    if status != "ended" and (progress_ratio or 0) >= 0.999:
+        verdict = {"code": "ended",
+                   "label": "취득 완료" + (" · 금액 기준" if progress_basis == "amount" else ""),
+                   "reason": f"취득기간({p_from}~{p_to}) 안에 취득예정 "
+                             + (f"금액 {plan_amount_krw:,}원을 채움(총 {cum_filled:,}주)" if progress_basis == "amount"
+                                else f"{plan_shares:,}주를 모두 취득")
+                             + f", 총 매입 {spent_krw:,}원" + (f", 평단 {round(avg_cost):,}원" if avg_cost else "")}
+    elif status == "ended":
         done = (progress_ratio or 0) >= 0.999
         verdict = {"code": "ended",
                    "label": "프로그램 종료" + (" · 전량 취득" if done else " · 미달"),
@@ -613,6 +632,7 @@ def assemble(raw: dict[str, Any], today: _dt.date) -> dict[str, Any]:
         "derived": {
             "cum_filled": cum_filled,
             "progress_ratio": progress_ratio,
+            "progress_basis": progress_basis,      # 'shares' | 'amount'(수량이 공시를 넘었지만 금액 안)
             "remaining_shares": remaining_shares,
             "spent_krw": spent_krw,
             "avg_cost": (round(avg_cost) if avg_cost else None),
@@ -683,7 +703,10 @@ def check_invariants(c: dict[str, Any]) -> list[str]:
         prev = r["cumulative"]
 
     # (2) 총량/한도
-    if plan is not None and d["cum_filled"] > plan:
+    if d.get("progress_basis") == "amount":
+        if d["spent_krw"] > (p.get("plan_amount_krw") or 0):
+            bad.append(f"{tag} 금액 기준인데 누적 매입 {d['spent_krw']:,} > 취득예정금액 {p.get('plan_amount_krw')}")
+    elif plan is not None and d["cum_filled"] > plan:
         bad.append(f"{tag} 누적 체결 {d['cum_filled']:,} > 취득예정 {plan:,}")
     if limit:
         for r in rows:
@@ -703,7 +726,7 @@ def check_invariants(c: dict[str, Any]) -> list[str]:
 
     # (4) 진행률
     if plan:
-        exp = d["cum_filled"] / plan
+        exp = (d["spent_krw"] / p["plan_amount_krw"]) if d.get("progress_basis") == "amount" else d["cum_filled"] / plan
         if d["progress_ratio"] is None or abs(d["progress_ratio"] - exp) > 1e-12:
             bad.append(f"{tag} progress_ratio {d['progress_ratio']} != "
                        f"cum_filled/plan_shares {exp}")
@@ -954,11 +977,52 @@ def build(today: _dt.date | None = None, write: bool = True,
         "companies": companies,
     }
 
+    apply_seasons(doc, write)
     if write:
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         OUT_PATH.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
         doc["_written_to"] = str(OUT_PATH)
     return doc
+
+
+def apply_seasons(doc: dict[str, Any], write: bool) -> None:
+    """회사별 시즌 번호를 매기고(공시 취득기간 시작일 순), 지난 시즌은 doc['archive'] 에 싣는다.
+
+    - 현재 프로그램은 매 빌드 data/programs/<종목>_<시작일>.json 으로 덮어쓴다(write=True 일 때).
+    - 빌드가 실패한 회사(build_failures)는 보관 파일의 마지막 상태를 현재 시즌으로 대신 보여준다.
+    """
+    PROGRAMS_DIR.mkdir(parents=True, exist_ok=True)
+    cur = doc.get("companies", {})
+    if write:
+        for tk, c in cur.items():
+            f = PROGRAMS_DIR / f"{tk}_{c['program']['period_from']}.json"
+            f.write_text(json.dumps(c, ensure_ascii=False, indent=1), encoding="utf-8")
+    archive: dict[str, list] = {}
+    for tk in TICKERS:
+        files = sorted(PROGRAMS_DIR.glob(f"{tk}_*.json"))
+        saved = [json.loads(f.read_text(encoding="utf-8")) for f in files]
+        if tk in cur and not any(x["program"]["period_from"] == cur[tk]["program"]["period_from"] for x in saved):
+            saved.append(cur[tk])   # write=False 미리보기
+        saved.sort(key=lambda x: x["program"]["period_from"])
+        for n, x in enumerate(saved, 1):
+            x["meta"]["season"] = n
+        if tk in cur:
+            n = next(x["meta"]["season"] for x in saved if x["program"]["period_from"] == cur[tk]["program"]["period_from"])
+            cur[tk]["meta"]["season"] = n
+            past = [x for x in saved if x["program"]["period_from"] != cur[tk]["program"]["period_from"]]
+        elif saved:
+            # 오늘 빌드가 실패한 회사 → 마지막 보관본을 현재 자리에 둔다(탭이 사라지지 않게)
+            last = saved[-1]
+            last["meta"]["stale_from_archive"] = True
+            last.setdefault("warnings", []).insert(0, "오늘 빌드 실패 — 마지막으로 보관된 상태를 표시합니다.")
+            cur[tk] = last
+            past = saved[:-1]
+        else:
+            past = []
+        if past:
+            archive[tk] = past
+    doc["companies"] = {tk: cur[tk] for tk in TICKERS if tk in cur}
+    doc["archive"] = archive
 
 
 def _n(v, spec: str = ",", dash: str = "—") -> str:
