@@ -4,7 +4,7 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-10-21T18:30:33+09:00",
+  "generated_at": "2026-10-21T19:30:35+09:00",
   "as_of": "2026-10-21",
   "status": "active"
  },
@@ -761,8 +761,8 @@
    "amount_exact": null,
    "amount_source": null,
    "cumulative": 23250000,
-   "close": 1287000,
-   "volume": 4044561,
+   "close": 1285000,
+   "volume": 4061538,
    "share_of_volume": null,
    "avg_vs_close": null,
    "provisional": true
