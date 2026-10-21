@@ -4,8 +4,8 @@
   "name": "삼성전자",
   "isur_cd": "00593",
   "corp_code": "00126380",
-  "generated_at": "2026-10-21T21:00:33+09:00",
-  "as_of": "2026-10-21",
+  "generated_at": "2026-10-22T08:40:34+09:00",
+  "as_of": "2026-10-22",
   "status": "active"
  },
  "program": {
@@ -726,7 +726,25 @@
    "amount_source": null,
    "cumulative": 56856305,
    "close": 223500,
-   "volume": 16637378,
+   "volume": 17268762,
+   "share_of_volume": null,
+   "avg_vs_close": null,
+   "provisional": true
+  },
+  {
+   "date": "2026-10-22",
+   "applied": null,
+   "applied_date": null,
+   "appliable_before": null,
+   "filled": null,
+   "fill_rate": null,
+   "amount_krw": null,
+   "avg_price": null,
+   "amount_exact": null,
+   "amount_source": null,
+   "cumulative": 56856305,
+   "close": null,
+   "volume": null,
    "share_of_volume": null,
    "avg_vs_close": null,
    "provisional": true
@@ -771,7 +789,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 52.459,
   "elapsed_ratio": 0.47540983606557374,
-  "elapsed_ratio_calendar_asof_today": 0.651685393258427,
+  "elapsed_ratio_calendar_asof_today": 0.6629213483146067,
   "exec_days": 29,
   "settled_days": 29,
   "last_settled_date": "2026-10-06",
@@ -791,6 +809,8 @@
   "2026-10-19: 체결·신청 데이터 모두 없음.",
   "2026-10-20: 체결·신청 데이터 모두 없음.",
   "2026-10-21: 체결·신청 데이터 모두 없음.",
+  "2026-10-22: 체결·신청 데이터 모두 없음.",
+  "2026-10-22: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
   "일별 체결금액 2일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
   "일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료)."
  ]
