@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-24T08:40:37+09:00",
- "as_of": "2026-10-24",
+ "generated_at": "2026-10-25T08:40:37+09:00",
+ "as_of": "2026-10-25",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
   "dart": "DART OpenAPI tsstkAqDecsn · stockTotqySttus · piicDecsn · list",
@@ -112,8 +112,8 @@
     "name": "삼성전자",
     "isur_cd": "00593",
     "corp_code": "00126380",
-    "generated_at": "2026-10-24T08:40:35+09:00",
-    "as_of": "2026-10-24",
+    "generated_at": "2026-10-25T08:40:35+09:00",
+    "as_of": "2026-10-25",
     "status": "active",
     "season": 1
    },
@@ -916,7 +916,7 @@
     "pace_eta_short_session": null,
     "on_schedule_gap_pp": 52.459,
     "elapsed_ratio": 0.47540983606557374,
-    "elapsed_ratio_calendar_asof_today": 0.6853932584269663,
+    "elapsed_ratio_calendar_asof_today": 0.6966292134831461,
     "exec_days": 29,
     "settled_days": 29,
     "last_settled_date": "2026-10-06",
@@ -948,8 +948,8 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-10-24T08:40:35+09:00",
-    "as_of": "2026-10-24",
+    "generated_at": "2026-10-25T08:40:35+09:00",
+    "as_of": "2026-10-25",
     "status": "active",
     "season": 1
    },
@@ -1796,7 +1796,7 @@
     "pace_eta_short_session": null,
     "on_schedule_gap_pp": 32.3058,
     "elapsed_ratio": 0.6612903225806451,
-    "elapsed_ratio_calendar_asof_today": 0.7142857142857143,
+    "elapsed_ratio_calendar_asof_today": 0.7252747252747253,
     "exec_days": 41,
     "settled_days": 41,
     "last_settled_date": "2026-10-21",
