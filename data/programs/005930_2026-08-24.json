@@ -4,8 +4,8 @@
   "name": "삼성전자",
   "isur_cd": "00593",
   "corp_code": "00126380",
-  "generated_at": "2026-10-30T21:00:36+09:00",
-  "as_of": "2026-10-30",
+  "generated_at": "2026-10-31T08:40:34+09:00",
+  "as_of": "2026-10-31",
   "status": "active"
  },
  "program": {
@@ -897,7 +897,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 52.459,
   "elapsed_ratio": 0.47540983606557374,
-  "elapsed_ratio_calendar_asof_today": 0.7528089887640449,
+  "elapsed_ratio_calendar_asof_today": 0.7640449438202247,
   "exec_days": 29,
   "settled_days": 29,
   "last_settled_date": "2026-10-06",

@@ -4,8 +4,8 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-10-30T21:00:36+09:00",
-  "as_of": "2026-10-30",
+  "generated_at": "2026-10-31T08:40:34+09:00",
+  "as_of": "2026-10-31",
   "status": "active"
  },
  "program": {
@@ -56,8 +56,8 @@
    "fill_rate": 1.0,
    "amount_krw": 352784375500,
    "avg_price": 1411138,
-   "amount_exact": false,
-   "amount_source": "estimated_hl2",
+   "amount_exact": true,
+   "amount_source": "kind_decl_snapshot",
    "cumulative": 500000,
    "close": 1391000,
    "volume": 3769922,
@@ -105,7 +105,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 0.1766,
   "elapsed_ratio": 0.031746031746031744,
-  "elapsed_ratio_calendar_asof_today": 0.01098901098901099,
+  "elapsed_ratio_calendar_asof_today": 0.02197802197802198,
   "exec_days": 2,
   "settled_days": 2,
   "last_settled_date": "2026-10-30",
@@ -114,7 +114,6 @@
   "kind_cum_ratio_pct": 3.35
  },
  "warnings": [
-  "일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
   "페이스 표본 2일(목표 5일 미만) — 완료 예상일(ETA) 신뢰도가 낮다.",
   "금액 한도 초과 우려: 현 평단(1,468,814원)으로 잔여 14,420,000주를 다 매입하면 21,914,700,150,360원 → 공시 취득예정금액 20,007,720,000,000원 대비 1,906,980,150,360원(9.53%) 초과. 초과 매입에는 정정공시가 필요하다."
  ]
