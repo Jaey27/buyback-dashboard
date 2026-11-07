@@ -4,8 +4,8 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-11-07T08:40:33+09:00",
-  "as_of": "2026-11-07",
+  "generated_at": "2026-11-08T08:40:32+09:00",
+  "as_of": "2026-11-08",
   "status": "active"
  },
  "program": {
@@ -195,7 +195,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 0.9532,
   "elapsed_ratio": 0.1111111111111111,
-  "elapsed_ratio_calendar_asof_today": 0.0989010989010989,
+  "elapsed_ratio_calendar_asof_today": 0.10989010989010989,
   "exec_days": 7,
   "settled_days": 7,
   "last_settled_date": "2026-11-06",
