@@ -4,7 +4,7 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-11-12T08:41:04+09:00",
+  "generated_at": "2026-11-12T18:31:38+09:00",
   "as_of": "2026-11-12",
   "status": "active"
  },
@@ -221,8 +221,8 @@
    "amount_exact": null,
    "amount_source": null,
    "cumulative": 2850000,
-   "close": null,
-   "volume": null,
+   "close": 1254000,
+   "volume": 4090224,
    "share_of_volume": null,
    "avg_vs_close": null,
    "provisional": true
@@ -276,7 +276,6 @@
   "kind_cum_ratio_pct": 19.1
  },
  "warnings": [
-  "2026-11-12: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨).",
-  "2026-11-12: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상."
+  "2026-11-12: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨)."
  ]
 }
