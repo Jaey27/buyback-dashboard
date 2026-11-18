@@ -4,7 +4,7 @@
   "name": "삼성전자",
   "isur_cd": "00593",
   "corp_code": "00126380",
-  "generated_at": "2026-11-18T18:30:37+09:00",
+  "generated_at": "2026-11-18T19:30:34+09:00",
   "as_of": "2026-11-18",
   "status": "active"
  },
@@ -1085,8 +1085,8 @@
    "amount_exact": null,
    "amount_source": null,
    "cumulative": 56856305,
-   "close": 195900,
-   "volume": 17483216,
+   "close": 195600,
+   "volume": 17607355,
    "share_of_volume": null,
    "avg_vs_close": null,
    "provisional": true
