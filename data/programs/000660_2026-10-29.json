@@ -4,8 +4,8 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-11-20T21:00:35+09:00",
-  "as_of": "2026-11-20",
+  "generated_at": "2026-11-21T08:40:35+09:00",
+  "as_of": "2026-11-21",
   "status": "active"
  },
  "program": {
@@ -326,8 +326,8 @@
    "fill_rate": 1.0,
    "amount_krw": 387898804000,
    "avg_price": 1108282,
-   "amount_exact": false,
-   "amount_source": "estimated_hl2",
+   "amount_exact": true,
+   "amount_source": "kind_decl_snapshot",
    "cumulative": 5300000,
    "close": 1100000,
    "volume": 3265459,
@@ -375,7 +375,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 8.5387,
   "elapsed_ratio": 0.2698412698412698,
-  "elapsed_ratio_calendar_asof_today": 0.24175824175824176,
+  "elapsed_ratio_calendar_asof_today": 0.25274725274725274,
   "exec_days": 17,
   "settled_days": 17,
   "last_settled_date": "2026-11-20",
@@ -383,7 +383,5 @@
   "kind_cum_qty": 5300000,
   "kind_cum_ratio_pct": 35.52
  },
- "warnings": [
-  "일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확."
- ]
+ "warnings": []
 }
