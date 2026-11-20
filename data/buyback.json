@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-20T08:40:38+09:00",
+ "generated_at": "2026-11-20T18:30:37+09:00",
  "as_of": "2026-11-20",
  "sources": {
   "kind": "KIND 자기주식 취득/처분 (kind.krx.co.kr/corpgeneral/treasurystk.do) — decl(신고·체결금액누계) / appl(신청) / trd·trddetail(체결)",
@@ -117,11 +117,9 @@
   "[005930] 2026-11-18: 체결·신청 데이터 모두 없음.",
   "[005930] 2026-11-19: 체결·신청 데이터 모두 없음.",
   "[005930] 2026-11-20: 체결·신청 데이터 모두 없음.",
-  "[005930] 2026-11-20: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
   "[005930] 일별 체결금액 2일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
   "[005930] 일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료).",
-  "[000660] 2026-11-20: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨).",
-  "[000660] 2026-11-20: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상."
+  "[000660] 2026-11-20: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨)."
  ],
  "companies": {
   "005930": {
@@ -130,7 +128,7 @@
     "name": "삼성전자",
     "isur_cd": "00593",
     "corp_code": "00126380",
-    "generated_at": "2026-11-20T08:40:36+09:00",
+    "generated_at": "2026-11-20T18:30:33+09:00",
     "as_of": "2026-11-20",
     "status": "active",
     "season": 1
@@ -1248,8 +1246,8 @@
      "amount_exact": null,
      "amount_source": null,
      "cumulative": 56856305,
-     "close": null,
-     "volume": null,
+     "close": 182300,
+     "volume": 17067851,
      "share_of_volume": null,
      "avg_vs_close": null,
      "provisional": true
@@ -1336,7 +1334,6 @@
     "2026-11-18: 체결·신청 데이터 모두 없음.",
     "2026-11-19: 체결·신청 데이터 모두 없음.",
     "2026-11-20: 체결·신청 데이터 모두 없음.",
-    "2026-11-20: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상.",
     "일별 체결금액 2일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확.",
     "일별 체결금액 5일은 파이프라인 가동 전 구간이라 data/kind_decl_backfill.json 의 KIND 누계 백필 차분을 썼다(amount_source='kind_decl_backfill', 프로그램 누계는 KIND 원본과 대조 완료)."
    ]
@@ -1347,7 +1344,7 @@
     "name": "SK하이닉스",
     "isur_cd": "00066",
     "corp_code": "00164779",
-    "generated_at": "2026-11-20T08:40:36+09:00",
+    "generated_at": "2026-11-20T18:30:33+09:00",
     "as_of": "2026-11-20",
     "status": "active",
     "season": 2
@@ -1673,8 +1670,8 @@
      "amount_exact": null,
      "amount_source": null,
      "cumulative": 4950000,
-     "close": null,
-     "volume": null,
+     "close": 1105000,
+     "volume": 3172511,
      "share_of_volume": null,
      "avg_vs_close": null,
      "provisional": true
@@ -1728,8 +1725,7 @@
     "kind_cum_ratio_pct": 33.18
    },
    "warnings": [
-    "2026-11-20: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨).",
-    "2026-11-20: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상."
+    "2026-11-20: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨)."
    ]
   }
  },
