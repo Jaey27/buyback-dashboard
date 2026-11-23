@@ -4,8 +4,8 @@
   "name": "SK하이닉스",
   "isur_cd": "00066",
   "corp_code": "00164779",
-  "generated_at": "2026-11-23T21:00:33+09:00",
-  "as_of": "2026-11-23",
+  "generated_at": "2026-11-24T08:40:32+09:00",
+  "as_of": "2026-11-24",
   "status": "active"
  },
  "program": {
@@ -344,14 +344,32 @@
    "fill_rate": 1.0,
    "amount_krw": 375708840500,
    "avg_price": 1073454,
-   "amount_exact": false,
-   "amount_source": "estimated_hl2",
+   "amount_exact": true,
+   "amount_source": "kind_decl_snapshot",
    "cumulative": 5650000,
    "close": 1101000,
-   "volume": 3945821,
-   "share_of_volume": 0.08870143881336735,
+   "volume": 3955250,
+   "share_of_volume": 0.08848998166993237,
    "avg_vs_close": -0.02501922797456846,
    "provisional": false
+  },
+  {
+   "date": "2026-11-24",
+   "applied": 350000,
+   "applied_date": "2026-11-23",
+   "appliable_before": 9270000,
+   "filled": null,
+   "fill_rate": null,
+   "amount_krw": null,
+   "avg_price": null,
+   "amount_exact": null,
+   "amount_source": null,
+   "cumulative": 5650000,
+   "close": null,
+   "volume": null,
+   "share_of_volume": null,
+   "avg_vs_close": null,
+   "provisional": true
   }
  ],
  "derived": {
@@ -383,9 +401,9 @@
    "label": "기한 내 완료 가능",
    "reason": "여유 18거래일 (>= 임계 5거래일)"
   },
-  "provisional_applied": null,
-  "provisional_cumulative": null,
-  "provisional_ratio": null,
+  "provisional_applied": 350000,
+  "provisional_cumulative": 6000000,
+  "provisional_ratio": 0.40214477211796246,
   "fill_rate_avg": 1.0,
   "amount_headroom_krw": 1583868264081,
   "amount_headroom_pct": 7.9163,
@@ -393,7 +411,7 @@
   "pace_eta_short_session": null,
   "on_schedule_gap_pp": 9.2972,
   "elapsed_ratio": 0.2857142857142857,
-  "elapsed_ratio_calendar_asof_today": 0.27472527472527475,
+  "elapsed_ratio_calendar_asof_today": 0.2857142857142857,
   "exec_days": 18,
   "settled_days": 18,
   "last_settled_date": "2026-11-23",
@@ -402,6 +420,7 @@
   "kind_cum_ratio_pct": 37.87
  },
  "warnings": [
-  "일별 체결금액 1일이 추정치다(amount_source='estimated_hl2'). KOSPI×직접취득은 KIND trddetail 체결금액이 구조적으로 공란이라 (고가+저가)/2 가중 배분 후 총액을 KIND 누계에 맞췄다. 일별 오차는 실측 대조 전이라 미상. 총액·누적평단은 정확."
+  "2026-11-24: 체결수량 없음 — KIND 는 당일 체결분을 18시 이후 집계한다(신청 350,000주 는 이미 공시됨).",
+  "2026-11-24: 네이버 일봉 없음 — 장 마감(15:30 KST) 전이면 정상."
  ]
 }
